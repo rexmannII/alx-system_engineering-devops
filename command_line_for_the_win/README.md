@@ -1,1 +1,1 @@
-This is a readme file for command_line_for_the_win, which uses sftp to transfer files from local to shell
+This is a readme file for command_line_for_the_win, which uses sftp to transfer files from local to shell.. By using the sftp terminal on VS code, which permits to transfer the files down to my shell (root folder). From there, I was able to use the vim command to git push the files to my github and save permanently after I must have moved the file to the required directory.
