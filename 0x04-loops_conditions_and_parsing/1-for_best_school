@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-# This script will display the "Best School" 10 times using the following code
+# This script will display the "Best School" 10 times using the following code.
 
 for ((1 = 0; 1 < 10; i++))
 do
