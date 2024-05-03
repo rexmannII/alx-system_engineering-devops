@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# manage_my_process initialization script
+
+# Define the path to the manage_my_process script
+MANAGE_SCRIPT="./manage_my_process"
+
+# Function to display usage message
+usage() {
+    echo "Usage: $0 {start|stop|restart}"
+}
+
+# Check if the script is being run as root
+if [ "$(id -u)" != "0" ]; then
+    echo "This script must be run as root" 1>&2
+    exit 1
+fi
+
+# Check if the manage_my_process script exists
+if [ ! -x "$MANAGE_SCRIPT" ]; then
+    echo "manage_my_process script not found or is not executable" 1>&2
+    exit 1
+fi
+
+# Check for the correct number of arguments
+if [ "$#" -ne 1 ]; then
+    usage
+    exit 1
+fi
+
+# Start, stop, or restart manage_my_process based on the argument passed
+case "$1" in
+    start)
+        $MANAGE_SCRIPT start
+        ;;
+    stop)
+        $MANAGE_SCRIPT stop
+        ;;
+    restart)
+        $MANAGE_SCRIPT restart
+        ;;
+    *)
+        usage
+        exit 1
+        ;;
+esac
+
+exit 0
