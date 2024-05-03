@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Displays "Best School" 10 timess with the use of a while loop.
-# At the 9th iteration, it displays "hi" before "Best School"
+# At the 9th iteration, it displays "hi" before "Best School".
 
 count=0
 
@@ -11,5 +11,5 @@ do
 		echo "Hi"
 	fi
 	echo "Best Schoo"
-	(( count++))
+	(( count++ ))
 done
