@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays PID along with a process name
+
+pids=$(pgrep -f bash)
+
+for pid in $pids; do
+	process_name=$(cat /proc/$pid/cmdline | tr '\0' ' ')
+
+	echo "PID: $pid, Process Name: $process_name"
+done
