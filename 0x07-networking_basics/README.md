@@ -1,0 +1,1 @@
+Thisfile contains the readme file for alx networking basics #0, which involves the OSI model, the LAN and WAN kinds of networking, the Internet, the TCP/UDP(Transmission Control Protocol and User Datagram Protocol)
