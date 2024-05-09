@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Displays Listening ports and only shows listening sockets.
+# Displays thr PID and the program which the socket belongs to.
+
+listening_port=$9sudo netstat -tulin | grep 'LISTEN')
+
+echO "PID	Port	Program"
+
+while read -r line; do
+	port=$(echo "$line" | awk '{print $4}' | awk -F ':' '{print $NF}')
+	pid=$(echo "$line" | awk '{print $7}' | awk -F '/' '{print $1}')
+
+	program=$(ps -p $pid -o comm=)
+
+	echo "$pid	$port	$program"
+done <<< "$listening_ports"
