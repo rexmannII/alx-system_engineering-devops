@@ -1,3 +1,6 @@
+https://github.com/rexmannII/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/sketch/3-scale_up.jpg
+
+
 For every additional element, why you are adding it:
 
 Load Balancer Cluster (HAProxy)

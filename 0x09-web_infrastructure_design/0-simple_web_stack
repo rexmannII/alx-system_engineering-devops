@@ -1,3 +1,7 @@
+https://github.com/rexmannII/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/sketch/0-simple_web_stack.jpg
+
+
+
 Server: the server is the powerful machine that provides data, services or resources to other computers, known as clients, over a network. In this setup, it hosts he web server, application server and database.
 
 Domain Name: the domain name (foobar.com) is a human-readable address that points to the server’s IP address (8.8.8.8). This allows users to access the website without remembering the numeric IP address.
@@ -26,4 +30,6 @@ Downtime when maintenance is needed: deploying new code or restarting the web se
 
 Cannot scale if too much incoming traffic:
 A single server can handle only a limited amount of traffic. High traffic can overwhelm the server, leading to slow response times or complete unavailability. Scaling up would require adding more servers and load balancing.
+
+
 

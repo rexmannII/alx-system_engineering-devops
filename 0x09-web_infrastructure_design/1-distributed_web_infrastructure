@@ -1,3 +1,6 @@
+https://github.com/rexmannII/alx-system_engineering-devops/blob/master/0x09-web_infrastructure_design/sketch/1-distributed_web_infrastructure.jpg
+
+
 Load Balancer (HAProxy):
 - Reason for Addition: To distribute incoming requests across multiple servers, improving load distribution and fault tolerance.
 
