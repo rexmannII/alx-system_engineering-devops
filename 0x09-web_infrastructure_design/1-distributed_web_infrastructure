@@ -1,0 +1,35 @@
+Load Balancer (HAProxy):
+- Reason for Addition: To distribute incoming requests across multiple servers, improving load distribution and fault tolerance.
+
+Distribution Algorithm:
+Round-Robin: Distributes requests evenly across all servers in the pool. Each server gets a turn in sequence.
+- Active-Active Setup: Both servers behind the load balancer are actively handling requests, ensuring efficient use of resources and better handling of high traffic loads.
+Active-Active: Multiple servers are actively handling traffic simultaneously.
+- Active-Passive: One server is active while the other is on standby, ready to take over if the active server fails.
+
+
+Web Server (Nginx) and Application Server:
+- Reason for Addition: To separate concerns, where Nginx handles HTTP requests and serves static files, while the application server processes dynamic content.
+- Placement: On Server 2, ensuring it handles the application logic and static content efficiently.
+
+Database (MySQL) with Primary-Replica Setup:
+- Reason for Addition: To ensure data redundancy, fault tolerance, and load distribution for database read operations.
+- Primary-Replica Cluster:
+Primary Node (Master): Handles all write operations and propagates changes to the replica node.
+Replica Node (Slave): Handles read operations and replicates data from the primary node.
+- Difference in Nodes:
+Primary Node: Responsible for data integrity and consistency, handling all write operations.
+Replica Node: Provides redundancy and handles read operations, improving read performance and availability.
+
+
+
+Single Points of Failure (SPOF):
+If the load balancer (Server 1) fails, the entire infrastructure becomes unavailable as it is the entry point for all traffic.
+If Server 3 (MySQL primary) fails, write operations to the database are disrupted, although read operations can continue from the replica.
+
+Security Issues:
+No Firewall: The infrastructure lacks a firewall, making it vulnerable to unauthorized access and attacks.
+No HTTPS: Communication is not encrypted, making data susceptible to interception and tampering.
+
+No Monitoring:
+The absence of monitoring tools means issues like server overload, failures, and performance bottlenecks might go undetected until they cause significant problems.

@@ -1,0 +1,35 @@
+For every additional element, why you are adding it?
+
+Firewalls: To secure network traffic at various points.
+SSL Certificate: To encrypt data in transit and ensure secure communications.
+Monitoring Clients: To collect and analyze performance and health metrics.
+
+What are firewalls for?:
+Firewalls protect the infrastructure by filtering incoming and outgoing traffic based on security rules, preventing unauthorized access and attacks.
+
+Why is the traffic served over HTTPS?:
+HTTPS encrypts the data exchanged between the client and server, ensuring privacy, data integrity, and authentication, protecting against eavesdropping and man-in-the-middle attacks.
+
+What is monitoring used for?:
+Monitoring is used to track the performance, availability, and health of the infrastructure, enabling proactive issue detection and resolution.
+
+How the monitoring tool is collecting data?:
+Monitoring clients installed on servers collect various metrics and logs, which are then sent to a centralized monitoring service (like Sumologic) for analysis and visualization.
+
+Explain what to do if you want to monitor your web server QPS (Queries Per Second):
+Configure the monitoring client on the web server to track and log the number of incoming requests per second. Send this data to the monitoring service, where you can set up dashboards and alerts based on the QPS metrics.
+
+
+
+
+Issues with This Infrastructure:
+
+Why terminating SSL at the load balancer level is an issue?:
+Terminating SSL at the load balancer means that the internal traffic between the load balancer and web servers is not encrypted, which could be a security risk if the internal network is compromised.
+
+Why having only one MySQL server capable of accepting writes is an issue?:
+Having only one MySQL server for writes creates a single point of failure for write operations. If the primary server fails, no write operations can be performed until a new primary is promoted.
+
+
+Why having servers with all the same components (database, web server, and application server) might be a problem?:
+Combining all components on the same servers can lead to resource contention, where one service's demand affects the performance of others. It also complicates scaling and can lead to security vulnerabilities if any single server is compromised.

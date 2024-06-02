@@ -1,0 +1,33 @@
+For every additional element, why you are adding it:
+
+Load Balancer Cluster (HAProxy)
+High-Availability Configuration:
+Reason: Provides redundancy and failover capabilities. If one load balancer goes down, the other can continue to distribute traffic, ensuring continuous availability.
+Configuration: Both load balancers are configured to synchronize and share the traffic load, using algorithms like round-robin or least connections.
+
+Web Server (Nginx)
+Reason for Addition: Dedicated to serving static content and handling client HTTP requests. By isolating this role, the server can be optimized for handling web traffic efficiently.
+Firewall: Protects the web server by allowing only necessary traffic from the load balancer.
+
+Application Server
+Reason for Addition: Dedicated to running the application logic and handling dynamic content. This separation ensures that resource-intensive application tasks do not impact the web server or database performance.
+Firewall: Protects the application server by allowing only necessary traffic from the web server and load balancer.
+
+Database Server (MySQL)
+Reason for Addition: Dedicated to database operations, providing better performance and security. The primary-replica setup ensures data redundancy and high availability for read operations.
+Primary-Replica Setup:
+Primary Node: Handles all write operations and propagates changes to the replica.
+Replica Node: Handles read operations and provides redundancy.
+
+
+
+Issues with This Infrastructure:
+
+Why terminating SSL at the load balancer level is an issue?:
+Explanation: Terminating SSL at the load balancer means that the internal traffic between the load balancer and the web/application servers is not encrypted, potentially exposing sensitive data if the internal network is compromised.
+
+Why having only one MySQL server capable of accepting writes is an issue?:
+Explanation: Having a single MySQL server for writes creates a single point of failure for write operations. If the primary server fails, write operations are disrupted until a new primary is promoted.
+
+Why having servers with all the same components (database, web server, and application server) might be a problem?:
+Explanation: Mixing all components on the same servers can lead to resource contention, where one service's demand impacts the performance of others. It also complicates scaling and can pose security risks if one server is compromised.

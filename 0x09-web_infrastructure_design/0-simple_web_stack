@@ -1,0 +1,29 @@
+Server: the server is the powerful machine that provides data, services or resources to other computers, known as clients, over a network. In this setup, it hosts he web server, application server and database.
+
+Domain Name: the domain name (foobar.com) is a human-readable address that points to the server’s IP address (8.8.8.8). This allows users to access the website without remembering the numeric IP address.
+
+DNS Record: What type of DNS record is ‘www’ in ‘www.foobar.com’ ?
+The ‘www’ in ‘www.foobar.com’ is a CNAME (Canonical Name) record, which maps an alias name to the true or canonical domain name. Hence, alternatively, it can be an A record directly pointing to the IP address 8.8.8.8.
+
+Web Server:  What is the role of the web server ?
+The web server (NGINX) handles incoming HTTP requests from users, serves static content (like images, CSS, JavaScript), and forwards dynamic content requests to the application server.
+
+Application Server: What is the role of the application server ?
+The application server processes the dynamic content. It runs server-side code (such as PHP, Python, Node.js) to generate web pages dynamically, process user inputs, and manage sessions.
+
+Database: What is the role of the database ?
+Here, the database (MySQL) stores, retrieves, and manages data for the website. It holds user data, content, and other persistent information the application requires.
+
+Communication: What is the server using to communicate with the computer of the user requesting the website ?
+The server uses the HTTP/HTTPS protocols to communicate with the user’s computer. This communication involves the web server receiving HTTP requests and sending HTTP responses.
+
+
+ISSUES WITH THIS INFRASTRUCTURE
+
+Single Point of Failure (SPOF): since there is only one server, if it fails, the entire website becomes unavailable. There are no backups or failover mechanisms in place.
+
+Downtime when maintenance is needed: deploying new code or restarting the web server (Nginx) causes downtime. Users cannot access the website during these periods.
+
+Cannot scale if too much incoming traffic:
+A single server can handle only a limited amount of traffic. High traffic can overwhelm the server, leading to slow response times or complete unavailability. Scaling up would require adding more servers and load balancing.
+
