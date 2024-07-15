@@ -1,6 +1,6 @@
 # creating a file in /tmp using puppet
 
-file {'Ejikeme':
+file { 'Ejikeme':
   path    => '/tmp/school',
   mode    => '0744',
   owner   => 'www-data',
