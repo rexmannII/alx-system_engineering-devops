@@ -2,14 +2,14 @@
 # Displays "Best School" 10 timess with the use of a while loop.
 # At the 9th iteration, it displays "hi" before "Best School".
 
-count=0
+index=0
 
-while [ $count -lt 10 ]
+while [ $index -lt 10 ]
 do
-	if [ $count -eq 9 ]
-	then
-		echo "Hi"
-	fi
-	echo "Best Schoo"
-	(( count++ ))
+  if [ $index -eq 9 ]
+  then
+    echo "Hi"
+  fi
+  echo "Best School"
+  (( index++ ))
 done
