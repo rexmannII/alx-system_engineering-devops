@@ -1,3 +1,4 @@
+#!/usr/bin/pup
 # installing Flask using puppet
 
 
